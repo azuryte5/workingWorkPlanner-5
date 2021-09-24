@@ -2,9 +2,10 @@
 /* Some classes have been given to us already */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: px;
   font-weight: 1000;
   line-height: 1;
+  background-color: #FAF9F6;
 }
 
 textarea{
@@ -26,6 +27,7 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  background-color: lightgrey;
 }
 
 .time-block{
@@ -36,7 +38,7 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 2px solid white;;
 }
 
 .hour {
@@ -70,7 +72,7 @@ textarea{
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn span:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
