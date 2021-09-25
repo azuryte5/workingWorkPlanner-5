@@ -1,83 +1,32 @@
-// This is the content within the text box
-//var work=$("#hour-9").val();
-// Now I'm trying to add i to it
 
-// This shows the date that gets posted on the page
 var currentDay = moment().format("dddd, MMMM Do YYYY")
 console.log(currentDay)
 $("#currentDay").append(currentDay);
 
-var count = []
-for (var i = 9; i < 18; i++){
-    count.push({
-    id: "hour-"+ i,
-    text: "text-" +i,
-    button: "button-" +i,
-    textArea: " "});
-
-$("div")
-};
+// If there is time. I want to Assign all the id's from this array with each section
 //change to section? add to div
 
-// var selector = document.getElementById("text-"+ 11)
-// console.log(selector)
-// selector=selector.innerHTML
-// console.log(selector)
-// console.log($("#text-"+11))
-// var taskSelected = document.querySelector(
-//     ".task-item[data-task-id='" + taskId + "']"
-//    );
-//$("#test").setAttribute("id", "hour-" + count[0].id)
-// TRY another way to build and add an ID
-//$( "#hour-" ).attr( "id", "#hour-" + count[0].id)
-//<textarea id="hour-9" class="col description"></textarea>
-//             id="hour-"+ count[i]
-
-// DAMN IT DIDn't WORK
-// I need to add a complete ID to the tags and then call and save them as whole. I wasn't able to refer to a split half id.
-
-// $( "#hour-" ).attr( "id", "#hour-"+count[0] );
-$(".saveBtn").on("click", function(){
-var slotNumber = $(this).parent().attr("id");
-var textArea = $(this).siblings(".description").val();
-$(this.hour).after("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $(".hour").after("")    
-    }, 2000);
-localStorage.setItem(slotNumber, textArea);
-});
 //each?
 //find?
 //trim?
 //attr? change and over
 
-//count array built up to 8 the length of the table
-
-//plannerArray = [ 9,10,11 ,12 ,13 ,14 ,15,16.17 ]
-// console.log(plannerArray)
-
-// console.log(plannerArray[7]===hour)
-
-// plannerArray = [ 9,10,11 ,12 ,13 ,14 ,15,16];
-
-// for (var i=0; i > plannerArray.length; i++){
-// if (plannerArray[i]===hour) {
-//     $("#hour-"+ plannerArray[i]).addClass("present")
-//     console.log(i)
-//     return hour};
-// if (i>plannerArray.length) {
-
-// This is a number which helps determine if it has happened yet
+// hour generates the number of the current hour
 var hour = new Date().getHours()
-console.log(hour)
+console.log("We are currently in the following hour: " +hour)
 // This is a hA to see if we match the text of the box
 var actualHour = moment().format("hA");
 //when actualHour and spell match they will be green!
-console.log(actualHour)
-var currentTime = document.getElementById("hour-"+hour)
-console.log(currentTime.textContent)
-// Here is the selector for just 9. If it matches it will be green. Please make spell the array thing.
+console.log("The current time with am or pm is: " +actualHour)
 
+//Current time helps locate which classes to give to colours too
+var currentTime = document.getElementById("hour-"+hour)
+
+if (hour > 17) {currentTime="Stop Bug"}
+
+console.log("The current time of " +currentTime.textContent+ " will be red")
+
+// This for loop will make the current time red if applicable, times that haven't occured in green and past events in grey.
 for (var i = 9; i < 18; i++){ 
 if (currentTime.textContent === actualHour) {
 $("#text-"+hour).addClass("present")
@@ -86,29 +35,31 @@ if (i > hour) {
 $("#text-"+i).addClass("future")
 } else {
     $("#text-"+i).addClass("past")    
-}
-// $("#button-i").on("click", function(){
-//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-//     var work=$("#text-"+i).val()
-//     console.log(work)
-//     $("#hour-"+i).html("<p class='text-success'>Saving Successful ✓</p>");
-//     setTimeout(function() {
-//     $("#hour").html(i+"am")    
-//     }, 2000);
-    
-//     localStorage.setItem(i+"Slot", JSON.stringify(work));
-   
-}
-// if (moment().isAfter(time)) {
-//     $(taskEl).addClass("list-group-item-danger");
-//   } else if (Math.abs(moment().diff(time, "days")) <= 2) {
-//     $(taskEl).addClass("list-group-item-warning");
-//   }
+}}
 
-// // var everyHour =function(){setInterval(hourlyTimer(),5000)};
-// everyHour()
+// If i have time I'm trying to build all id's in a count array 
+var count = []
+for (var i = 9; i < 18; i++){
+    count.push({
+    id: "hour-"+ i,
+    text: "text-" +i,
+    button: "button-" +i,
+    textArea: " "});
 
-// //CAN I BUILD AN ARRAY FOR ALL OF THIS?
+
+};
+console.log(count)
+// each save button will target it's sibiling .description and save it's textarea and post a display message for 2seconds
+$(".saveBtn").on("click", function(){
+    var slotNumber = $(this).parent().attr("id");
+    var textArea = $(this).siblings(".description").val();
+    $(this).before("<p class='text-success'>Saving Successful ✓</p>");
+        setTimeout(function() {
+        $("p").html("")    
+        }, 2000);
+    localStorage.setItem(slotNumber, textArea);
+    });
+
 // $("#button-9").on("click", function(){
 //     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
 //     work=$("#text-9").val()
@@ -219,9 +170,11 @@ $("#text-"+i).addClass("future")
 //     localStorage.setItem("5pmSlot", JSON.stringify(work));
 //     // saveTasks(work)
 // })
+var loadTasks =function(){}
 for (var i = 9; i < 18; i++){
 $("#text-"+i).val(localStorage.getItem("slot-"+i));
 };
+loadTasks()
 
 // $("#text-9").val(localStorage.getItem("slot-9"));
 // $("#text-10").val(localStorage.getItem("slot-10"));
