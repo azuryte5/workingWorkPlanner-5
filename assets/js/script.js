@@ -1,3 +1,4 @@
+var work=$("#hour-9").val();
 // Old time is greyed out
 // current time is red
 // future time is green
@@ -88,12 +89,25 @@ console.log(actualHour)
 // .storeText();
 var spell = document.getElementById("hour-9").value
 console.log(spell)
-
-var declare = $("#hour-9")
+// This two give the same result
+var declare = $("#hour-9").val()
 console.log(declare)
-
-$("#hour-9").on("click", function(){
+//save button works
+$("#button-9").on("click", function(){
     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    var work=$("#hour-9").val();
+    work=$("#hour-9").val()
     console.log(work)
+    var alert = $("#hour").append
+    saveTasks(work)
 })
+
+var saveTasks = function(work) {
+    localStorage.setItem("9amSlot", JSON.stringify(work));
+  };
+
+var loadTasks = function() {
+    work = JSON.parse(localStorage.getItem("9amSlot"));
+    $("#hour-9").val(work);
+}
+
+loadTasks();
