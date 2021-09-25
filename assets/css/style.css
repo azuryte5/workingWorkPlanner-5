@@ -2,7 +2,7 @@
 /* Some classes have been given to us already */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: px;
+  font-size: 20px;
   font-weight: 1000;
   line-height: 1;
   background-color: #FAF9F6;
@@ -47,6 +47,7 @@ textarea{
   color: #000000;
   border-top: 1px dashed #000000;
   justify-content: center;
+  padding-top: 30px;
   
 }
 
@@ -74,6 +75,6 @@ textarea{
 }
 
 .saveBtn span:hover {
-  font-size: 20px;
+  font-size: 25px;
   transition: all .3s ease-in-out;
 }

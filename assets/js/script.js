@@ -18,7 +18,7 @@ console.log(actualHour)
 // var hour = day.getHours()
 // console.log(hour)
 
-// plannerArray = [ 9,10,11 ,12 ,13 ,14 ,15,16.17 ]
+//plannerArray = [ 9,10,11 ,12 ,13 ,14 ,15,16.17 ]
 // console.log(plannerArray)
 
 // console.log(plannerArray[7]===hour)
@@ -93,11 +93,17 @@ console.log(spell)
 var declare = $("#hour-9").val()
 console.log(declare)
 //save button works
+
+//CAN I BUILD AN ARRAY FOR ALL OF THIS?
 $("#button-9").on("click", function(){
     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
     work=$("#hour-9").val()
     console.log(work)
-    var alert = $("#hour").append
+    $("#hour").html("<p class='text-success'>Saving Successful</p>");
+    setTimeout(function() {
+    $("#hour").html("9 am")    
+    }, 2000);
+    
     saveTasks(work)
 })
 
