@@ -15,7 +15,9 @@ for (var i = 9; i < 18; i++){
     });
 };
 console.log(count[0])
-$( "#hour-" ).attr( "id", "#hour-" + count[0].id)
+//$("#test").setAttribute("id", "hour-" + count[0].id)
+// TRY another way to build and add an ID
+//$( "#hour-" ).attr( "id", "#hour-" + count[0].id)
 //<textarea id="hour-9" class="col description"></textarea>
 //             id="hour-"+ count[i]
 
@@ -26,7 +28,7 @@ $( "#hour-" ).attr( "id", "#hour-" + count[0].id)
 //each?
 //find?
 //trim?
-//attr?
+//attr? change and over
 
 //count array built up to 8 the length of the table
 
