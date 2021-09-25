@@ -11,8 +11,7 @@ var currentDay = moment().format("dddd, MMMM Do YYYY")
 console.log(currentDay)
 $("#currentDay").append(currentDay);
 
-var actualHour = moment().format("hA");
-console.log(actualHour)
+
 
 // day = new Date()
 // var hour = day.getHours()
@@ -40,10 +39,26 @@ console.log(actualHour)
 //     console.log(i)
 //     return hour};
 // if (i>plannerArray.length) {
-// }
-// //)
-// };
-// }
+
+// This is a number which helps determine if it has happened yet
+var hour = new Date().getHours()
+console.log(hour)
+// This is a hA to see if we match the text of the box
+var actualHour = moment().format("hA");
+//when actualHour and spell match they will be green!
+console.log(actualHour)
+var spell = document.getElementById("hour")
+console.log(spell.textContent)
+// Here is the selector for just 9. If it matches it will be green. Please make spell the array thing. 
+if (spell.textContent === actualHour) {
+$("#hour-9").addClass("present")
+} else if (9 > hour) {
+$("#hour-9").addClass("future")
+} else {
+    $("#hour-9").addClass("past")    
+}
+
+
 // var time =hourlyTimer(hour).value
 // console.log(time)
 // // }
@@ -87,11 +102,10 @@ console.log(actualHour)
 // console.log(value);
 // })
 // .storeText();
-var spell = document.getElementById("hour-9").value
-console.log(spell)
-// This two give the same result
-var declare = $("#hour-9").val()
-console.log(declare)
+
+// // This two give the same result
+// var declare = $("#hour-9").val()
+// console.log(declare)
 //save button works
 
 //CAN I BUILD AN ARRAY FOR ALL OF THIS?
