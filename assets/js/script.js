@@ -10,19 +10,23 @@ $("#currentDay").append(currentDay);
 var count = []
 for (var i = 9; i < 18; i++){
     count.push({
-    id: i,
-    text:"placeholder"
-    });
+    id: "hour-"+ i,
+    text: "text-" +i,
+    button: "button-" +i,
+    textArea: " "});
+
+$("div")
 };
-console.log(count[0])
+//change to section? add to div
 
-console.log("hour-" + count[0].id)
-
-var selector = document.querySelector(".description[id='hour-" + count[0].id + "]")
-console.log(selector)
+// var selector = document.getElementById("text-"+ 11)
+// console.log(selector)
+// selector=selector.innerHTML
+// console.log(selector)
+// console.log($("#text-"+11))
 // var taskSelected = document.querySelector(
 //     ".task-item[data-task-id='" + taskId + "']"
-//   );
+//    );
 //$("#test").setAttribute("id", "hour-" + count[0].id)
 // TRY another way to build and add an ID
 //$( "#hour-" ).attr( "id", "#hour-" + count[0].id)
@@ -32,7 +36,16 @@ console.log(selector)
 // DAMN IT DIDn't WORK
 // I need to add a complete ID to the tags and then call and save them as whole. I wasn't able to refer to a split half id.
 
-//$( "#hour-" ).attr( "id", "#hour-"+count[0] );
+// $( "#hour-" ).attr( "id", "#hour-"+count[0] );
+$(".saveBtn").on("click", function(){
+var slotNumber = $(this).parent().attr("id");
+var textArea = $(this).siblings(".description").val();
+$(this.hour).after("<p class='text-success'>Saving Successful ✓</p>");
+    setTimeout(function() {
+    $(".hour").after("")    
+    }, 2000);
+localStorage.setItem(slotNumber, textArea);
+});
 //each?
 //find?
 //trim?
@@ -86,12 +99,6 @@ $("#text-"+i).addClass("future")
 //     localStorage.setItem(i+"Slot", JSON.stringify(work));
    
 }
-
-
-
-
-
-
 // if (moment().isAfter(time)) {
 //     $(taskEl).addClass("list-group-item-danger");
 //   } else if (Math.abs(moment().diff(time, "days")) <= 2) {
@@ -101,134 +108,127 @@ $("#text-"+i).addClass("future")
 // // var everyHour =function(){setInterval(hourlyTimer(),5000)};
 // everyHour()
 
-//CAN I BUILD AN ARRAY FOR ALL OF THIS?
-$("#button-9").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-9").val()
-    console.log(work)
-    $("#hour-9").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-9").html("9am")    
-    }, 2000);
-    localStorage.setItem("9amSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-
-$("#button-10").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-10").val()
-    console.log(work)
-    $("#hour-10").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-10").html("10am")    
-    }, 2000);
-    localStorage.setItem("10amSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#button-11").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-11").val()
-    console.log(work)
-    $("#hour-11").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-11").html("11am")    
-    }, 2000);
-    localStorage.setItem("11amSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-
-$("#button-12").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-12").val()
-    console.log(work)
-    $("#hour-12").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-12").html("12pm")    
-    }, 2000);
-    localStorage.setItem("12pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#button-13").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-13").val()
-    console.log(work)
-    $("#hour-13").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-13").html("1pm")    
-    }, 2000);
-    localStorage.setItem("1pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-
-$("#button-14").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-14").val()
-    console.log(work)
-    $("#hour-14").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-14").html("2pm")    
-    }, 2000);
-    localStorage.setItem("2pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#button-15").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-15").val()
-    console.log(work)
-    $("#hour-15").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-15").html("3pm")    
-    }, 2000);
-    localStorage.setItem("3pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#button-16").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-16").val()
-    console.log(work)
-    $("#hour-16").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-16").html("4pm")    
-    }, 2000);
-    localStorage.setItem("4pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#button-17").on("click", function(){
-    //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
-    work=$("#text-17").val()
-    console.log(work)
-    $("#hour-17").html("<p class='text-success'>Saving Successful ✓</p>");
-    setTimeout(function() {
-    $("#hour-17").html("5pm")    
-    }, 2000);
-    localStorage.setItem("5pmSlot", JSON.stringify(work));
-    // saveTasks(work)
-})
-
-$("#text-9").val(JSON.parse(localStorage.getItem("9amSlot")));
-$("#text-10").val(JSON.parse(localStorage.getItem("10amSlot")));
-$("#text-11").val(JSON.parse(localStorage.getItem("11amSlot")));
-$("#text-12").val(JSON.parse(localStorage.getItem("12pmSlot")));
-$("#text-13").val(JSON.parse(localStorage.getItem("1pmSlot")));
-$("#text-14").val(JSON.parse(localStorage.getItem("2pmSlot")));
-$("#text-15").val(JSON.parse(localStorage.getItem("3pmSlot")));
-$("#text-16").val(JSON.parse(localStorage.getItem("4pmSlot")));
-$("#text-17").val(JSON.parse(localStorage.getItem("5pmmSlot")));
-// var saveTasks = function(work) {
+// //CAN I BUILD AN ARRAY FOR ALL OF THIS?
+// $("#button-9").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-9").val()
+//     console.log(work)
+//     $("#hour-9").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-9").html("9am")    
+//     }, 2000);
 //     localStorage.setItem("9amSlot", JSON.stringify(work));
-//   };
+//     // saveTasks(work)
+// })
 
-// var loadTasks = function() {
-//     work = JSON.parse(localStorage.getItem("9amSlot"));
-//     $("#hour-9").val(work);
-// }
 
-// loadTasks();
+// $("#button-10").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-10").val()
+//     console.log(work)
+//     $("#hour-10").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-10").html("10am")    
+//     }, 2000);
+//     localStorage.setItem("10amSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+// $("#button-11").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-11").val()
+//     console.log(work)
+//     $("#hour-11").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-11").html("11am")    
+//     }, 2000);
+//     localStorage.setItem("11amSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+
+// $("#button-12").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-12").val()
+//     console.log(work)
+//     $("#hour-12").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-12").html("12pm")    
+//     }, 2000);
+//     localStorage.setItem("12pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+// $("#button-13").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-13").val()
+//     console.log(work)
+//     $("#hour-13").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-13").html("1pm")    
+//     }, 2000);
+//     localStorage.setItem("1pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+
+// $("#button-14").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-14").val()
+//     console.log(work)
+//     $("#hour-14").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-14").html("2pm")    
+//     }, 2000);
+//     localStorage.setItem("2pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+// $("#button-15").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-15").val()
+//     console.log(work)
+//     $("#hour-15").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-15").html("3pm")    
+//     }, 2000);
+//     localStorage.setItem("3pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+// $("#button-16").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-16").val()
+//     console.log(work)
+//     $("#hour-16").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-16").html("4pm")    
+//     }, 2000);
+//     localStorage.setItem("4pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+
+// $("#button-17").on("click", function(){
+//     //Work makes it store the text input of the log entry. finally. val kinda uses the textcontent
+//     work=$("#text-17").val()
+//     console.log(work)
+//     $("#hour-17").html("<p class='text-success'>Saving Successful ✓</p>");
+//     setTimeout(function() {
+//     $("#hour-17").html("5pm")    
+//     }, 2000);
+//     localStorage.setItem("5pmSlot", JSON.stringify(work));
+//     // saveTasks(work)
+// })
+for (var i = 9; i < 18; i++){
+$("#text-"+i).val(localStorage.getItem("slot-"+i));
+};
+
+// $("#text-9").val(localStorage.getItem("slot-9"));
+// $("#text-10").val(localStorage.getItem("slot-10"));
+// $("#text-11").val(localStorage.getItem("slot-11"));
+// $("#text-12").val(localStorage.getItem("slot-12"));
+// $("#text-13").val(localStorage.getItem("slot-13"));
+// $("#text-14").val(localStorage.getItem("slot-14"));
+// $("#text-15").val(localStorage.getItem("slot-15"));
+// $("#text-16").val(localStorage.getItem("slot-16"));
+// $("#text-17").val(localStorage.getItem("slot-17"))
