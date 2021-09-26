@@ -1,9 +1,9 @@
 # workingWorkPlanner-5
 05 Third-Party APIs: Work Day Scheduler
 
-Link to Github Application: https://azuryte5.github.io/workingWorkPlanner-5/
+Link to Github Application: https://azuryte5.github.io/workingWorkPlanner-5
 
-Link to Githut Repository: https://github.com/azuryte5/workingWorkPlanner-5
+Link to Github Repository: https://github.com/azuryte5/workingWorkPlanner-5
 
 <img src="assets/images/screenshot5.png" alt="Work day planner" width="500" style="max-width: 100%;">
 
