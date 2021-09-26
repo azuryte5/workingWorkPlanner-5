@@ -5,7 +5,7 @@ Link to Github Application: To be added!
 
 Link to Githut Repository: https://github.com/azuryte5/workingWorkPlanner-5
 
-<img src="assets/images/Screenshot5.png" alt="Work day planner" width="500" style="max-width: 100%;">
+<img src="assets/images/screenshot5.png" alt="Work day planner" width="500" style="max-width: 100%;">
 
 ##Project Overview:
 
