@@ -40,7 +40,6 @@ $("#text-"+i).addClass("future")
 //     button: "button-" +i,
 //     textArea: " "});
 // };
-console.log(count)
 // each save button will target it's sibling .description and save it's textarea and post a display message for 2seconds
 $(".saveBtn").on("click", function(){
     var slotNumber = $(this).parent().attr("id");
